@@ -13,13 +13,12 @@ def read(pipe, funcs):
 def write(get):
     for line in iter(get, None):
         print(line)
-        print("----------------------")
 
 
 def execute(command):
 
     process = Popen(
-        command,
+        ["python", command],
         cwd=None,
         shell=False,
         close_fds=True,
@@ -56,7 +55,5 @@ def execute(command):
 
 
 
-# print(os.getcwd())
-file_path = ["testprocesss.py"]
-language = "python"
-print(execute([language] + file_path))
+
+# print(execute("testprocesss.py"))
