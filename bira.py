@@ -53,7 +53,17 @@ def execute(command):
 
     return errors
 
+def get_error_message(error):
+    if error == '':
+        return None
+    
+    elif any(e in error for e in ["KeyboardInterrupt", "SystemExit", "GeneratorExit"]): # Non-compiler errors
+        return None
+    else:
+        return error.split('\n')[-2].strip()
+
+def stackexchange():
+    
 
 
-
-# print(execute("testprocesss.py"))
+print get_error_message(execute("testprocesss.py"))
