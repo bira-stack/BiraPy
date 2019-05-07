@@ -35,7 +35,6 @@ except: # For Python 3
     import urllib.parse as urlparse
     from urllib.parse import urlencode
 
-# ZeroDivisionError%3A%20integer%20division%20or%20modulo%20by%20zero  --> intitle format
 
 def get_url():
     url = 'https://api.stackexchange.com/2.2/search?'
@@ -55,11 +54,7 @@ def get_url():
 
     return url
 
-
-
-
 r = requests.get(get_url())
-
 print(json.dumps(r.json(), indent=4, sort_keys=True))
 
 ######
