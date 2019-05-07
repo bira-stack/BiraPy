@@ -69,7 +69,7 @@ def get_error_message(error):
     else:
         return error.split('\n')[-2].strip()
 
-def get_url(error_message):
+def get_api_url(error_message):
     intitle = error_message
     url = 'https://api.stackexchange.com/2.2/search?'
     params = {
@@ -88,6 +88,6 @@ def get_url(error_message):
 
     return url
 
-# r = requests.get(get_url(get_error_message(execute("testprocesss.py"))))
+# r = requests.get(get_api_url(get_error_message(execute("testprocesss.py"))))
 # print(json.dumps(r.json(), indent=4, sort_keys=True))
 
